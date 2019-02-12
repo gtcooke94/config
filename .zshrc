@@ -66,7 +66,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 plugins=(
   git
 )
-
+export TERM="xterm-256color"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

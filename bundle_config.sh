@@ -2,4 +2,4 @@
 
 # Folders and files wanted
 # .vim, .tmux.conf
-zip -r /tmp/config.zip ~/.vim ~/.tmux.conf
+zip -r /tmp/config.zip ~/.vim ~/.tmux.conf ./unbundle_config.sh

@@ -8,3 +8,6 @@ mkdir ~/.vim/{bundle,autoload,swaps,backups}
 
 ln -s $CONFIG_DIR/.vimrc $HOME/.vim/.vimrc
 ln -s $HOME/.vim/.vimrc $HOME/.vimrc
+
+pip install --user pylint
+pip install --user flake8

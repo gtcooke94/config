@@ -29,6 +29,10 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'Valloric/ListToggle'
 
+Plugin 'Shougo/deoplete.nvim'
+
+" Plugin 'tacahiroy/ctrlp-ssh'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -110,10 +114,13 @@ let g:NERDCreateDefaultMappings = 0
 nmap <leader>c <plug>NERDCommenterToggle
 vmap <leader>c <plug>NERDCommenterToggle
 
-" Colarized colorscheme
+" Solarized colorscheme
 syntax enable
 set background=dark
 colorscheme solarized
+" Swap between solarized light and dark
+call togglebg#map("<F5>")
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline show all buffers when there is only one tab open
@@ -156,3 +163,20 @@ let g:airline_symbols.linenr = ''
 " List toggle
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+
+" Text wrapping
+set textwidth=79
+
+let g:ale_lint_on_text_changed = 'never'
+
+" Folding
+set foldmethod=indent
+nnoremap <leader>o zo 
+nnoremap <leader>f zc
+
+
+
+

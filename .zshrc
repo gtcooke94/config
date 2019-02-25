@@ -10,6 +10,7 @@ export ZSH="/Users/gcooke/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -117,3 +118,15 @@ alias gh='git help'
 alias gl='git log --pretty=format:"%C(yellow)%h %ad %Creset%s %C(red)%d %Cgreen[%an] %Creset" --decorate --date=short -10 --graph'
 alias glm='git log --oneline --decorate --graph'
 alias gu='git unstage'
+
+source /Users/gcooke/.zshrc_pindrop
+
+POWERLEVEL9K_PROMPT_ON_NEWLINE=false
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
+zstyle ':vcs_info:*' disable-patterns "$HOME/mnt(|/*)"
+
+# SSH Jupyter Notebook
+# Assume the following has been run on the ssh'd machine
+# jupyter notebook --no-browser --port=8080
+alias jupyter_freestyle03='ssh -N -L 8080:localhost:8080 freestyle03.atl.pdrop.net'
+source /Users/gcooke/Library/Python/2.7/bin/virtualenvwrapper.sh

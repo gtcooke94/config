@@ -11,3 +11,4 @@ ln -s $HOME/.vim/.vimrc $HOME/.vimrc
 
 pip install --user pylint
 pip install --user flake8
+pip3 install --user pynvim

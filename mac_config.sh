@@ -29,5 +29,8 @@ cd fonts
 cd ..
 rm -rf fonts
 
+# Install better ctags for vim
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+
 
 

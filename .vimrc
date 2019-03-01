@@ -1,6 +1,5 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
-
+filetype off                  " required 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -16,8 +15,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 " Commenting
 Plugin 'scrooloose/nerdcommenter'
-" Jupyter - can't get this working right now
-" Plugin 'szymonmaszke/vimpyter'
+" Jupyter - can't get this working right now Plugin 'szymonmaszke/vimpyter'
 
 " Solarized Colorscheme
 Plugin 'altercation/vim-colors-solarized'
@@ -30,6 +28,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/ListToggle'
 
 Plugin 'Shougo/deoplete.nvim'
+
+Plugin 'ludovicchabant/vim-gutentags'
 
 " Plugin 'tacahiroy/ctrlp-ssh'
 
@@ -59,18 +59,6 @@ inoremap jk <Esc>
 nnoremap  <leader>s :w<CR>
 nnoremap <leader>a :q<CR>
 
-" ctrlp settings
-let g:ctrlp_custom_ignore = {
-\ 'dir':  '\v[\/](git|hg|svn|build|build_dependencies|build_resources|devel)$',
-\ 'file': '\v\.(exe|so(\.\d\.\d\.\d)?|dll|pyc)$',
-\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-\ }
-
-"file searching, info found at ctrlpvim github repo
-nnoremap <localleader>f :CtrlP getcwd()<cr>
-let g:ctrlp_working_path_mode='w'
-let g:ctrlp_show_hidden = 1
-
 " Hybrid Line Number Toggle
 " https://jeffkreeftmeijer.com/vim-number/
 set number relativenumber
@@ -84,6 +72,19 @@ augroup END
 set backup
 set backupdir=~/.vim/backups
 set dir=~/.vim/swaps
+
+" ctrlp settings
+let g:ctrlp_custom_ignore = {
+\ 'dir':  '\v[\/](git|hg|svn|build|build_dependencies|build_resources|devel)$',
+\ 'file': '\v\.(exe|so(\.\d\.\d\.\d)?|dll|pyc)$',
+\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+\ }
+
+"file searching, info found at ctrlpvim github repo
+nnoremap <localleader>f :CtrlP getcwd()<cr>
+let g:ctrlp_working_path_mode='w'
+let g:ctrlp_show_hidden = 1
+
 
 " NerdCommentor Settings
 " Add spaces after comment delimiters by default
@@ -176,6 +177,9 @@ let g:ale_lint_on_text_changed = 'never'
 set foldmethod=indent
 nnoremap <leader>o zo 
 nnoremap <leader>f zc
+
+" Open tag in new tab
+nnoremap <leader>] <C-w><C-]><C-w>T
 
 
 

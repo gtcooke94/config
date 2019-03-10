@@ -1,8 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=${HOME}/homebrew/bin:${PATH}
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/gcooke/.oh-my-zsh"
+export PATH=${HOME}/homebrew/bin:${PATH} # Path to your oh-my-zsh installation.
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -101,7 +100,8 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim='nvim'
 # https://iterm2.com/documentation-shell-integration.html
-source ~/.iterm2_shell_integration.zsh
+# Below line is Mac only
+# source ~/.iterm2_shell_integration.zsh
 
 #git aliases
 alias gs='git status'
@@ -119,14 +119,9 @@ alias gl='git log --pretty=format:"%C(yellow)%h %ad %Creset%s %C(red)%d %Cgreen[
 alias glm='git log --oneline --decorate --graph'
 alias gu='git unstage'
 
-source /Users/gcooke/.zshrc_pindrop
-
 POWERLEVEL9K_PROMPT_ON_NEWLINE=false
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
 zstyle ':vcs_info:*' disable-patterns "$HOME/mnt(|/*)"
 
-# SSH Jupyter Notebook
-# Assume the following has been run on the ssh'd machine
-# jupyter notebook --no-browser --port=8080
-alias jupyter_freestyle03='ssh -N -L 8080:localhost:8080 freestyle03.atl.pdrop.net'
-source /Users/gcooke/Library/Python/2.7/bin/virtualenvwrapper.sh
+# MAC Line
+# source /Users/gcooke/Library/Python/2.7/bin/virtualenvwrapper.sh

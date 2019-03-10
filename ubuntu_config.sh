@@ -25,3 +25,16 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 sudo apt-get install fonts-powerline
 
 ln -s ~/.zshrc ~/repos/config/.zshrc
+
+# Install universal-ctags
+# Clone this to ~/repos or wherever you want really
+pushd ~/repos
+git clone git@github.com:universal-ctags/ctags.git
+pushd ~/repos/ctags
+sudo apt install autoconf pkg-config
+./autogen.sh
+./configure
+make
+sudo make install
+popd
+popd

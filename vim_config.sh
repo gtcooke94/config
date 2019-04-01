@@ -10,6 +10,9 @@ ln -s -f $CONFIG_DIR/.vimrc $HOME/.vim/.vimrc
 ln -s -f $HOME/.vim/.vimrc $HOME/.vimrc
 ln -s -f $HOME/.vimrc $HOME/.config/nvim
 
+
+# Likely want to do this in a virtual env instead
 pip install --user pylint
 pip install --user flake8
+pip install --user jedi
 pip3 install --user pynvim

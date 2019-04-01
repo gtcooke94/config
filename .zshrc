@@ -123,5 +123,5 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=false
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
 zstyle ':vcs_info:*' disable-patterns "$HOME/mnt(|/*)"
 
-# MAC Line
+# Mac only
 # source /Users/gcooke/Library/Python/2.7/bin/virtualenvwrapper.sh

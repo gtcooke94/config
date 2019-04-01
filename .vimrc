@@ -184,5 +184,7 @@ nnoremap <leader>f zc
 nnoremap <leader>] <C-w><C-]><C-w>T
 
 " let g:gutentags_project_root = ['.customprojectroot', '.git', '.hg', '.svn', '.bzr', '_darcs', '_FOSSIL_', '.fslckout']
-let g:python3_host_prog = '/Users/gcooke/.virtualenvs/neovim/bin/python3'
+" Mac only
+" let g:python3_host_prog = '/Users/gcooke/.virtualenvs/neovim/bin/python3'
+
 

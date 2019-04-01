@@ -125,8 +125,4 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=false
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
 zstyle ':vcs_info:*' disable-patterns "$HOME/mnt(|/*)"
 
-# SSH Jupyter Notebook
-# Assume the following has been run on the ssh'd machine
-# jupyter notebook --no-browser --port=8080
-alias jupyter_freestyle03='ssh -N -L 8080:localhost:8080 freestyle03.atl.pdrop.net'
 source /Users/gcooke/Library/Python/2.7/bin/virtualenvwrapper.sh

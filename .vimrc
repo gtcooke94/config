@@ -19,20 +19,30 @@ Plugin 'scrooloose/nerdcommenter'
 " Solarized Colorscheme
 Plugin 'altercation/vim-colors-solarized'
 
+" Linting
 Plugin 'w0rp/ale'
 
+" vim statusline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" List toggle
 Plugin 'Valloric/ListToggle'
 
+" Neovim autocompletion
 Plugin 'Shougo/deoplete.nvim'
 
+" Ctags/jumping between definitions in project
 Plugin 'ludovicchabant/vim-gutentags'
 
+" Git integration
 Plugin 'tpope/vim-fugitive'
 
+" Python autocompletion for deoplete
 Plugin 'deoplete-plugins/deoplete-jedi'
+
+" Integrate tmuxline with vim airline
+Plugin 'edkolev/tmuxline.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,6 +78,11 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
+
+" Tabstop settings
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " Set backup, swaps
 set backup
@@ -116,13 +131,25 @@ let g:NERDCreateDefaultMappings = 0
 nmap <leader>c <plug>NERDCommenterToggle
 vmap <leader>c <plug>NERDCommenterToggle
 
+let g:airline#externsions#tmuxline#enabled = 0
 " Solarized colorscheme
 syntax enable
 set background=dark
 colorscheme solarized
-" Swap between solarized light and dark
-call togglebg#map("<F5>")
+" Swap between solarized light and dark, mix with iTerm2 to swap dark and light
+" theme
+" call togglebg#map("<F5>")
+map <Leader>bg :call Swapbg()<CR>
+    
+function Swapbg()
+    let g:airline_solarized_bg = ( &background == "dark"? "light": "dark" )
+    let &background = ( &background == "dark"? "light": "dark" )
+endfunction
 
+function Setbg(color)
+    let g:airline_solarized_bg = a:color
+    let &background = a:color
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline show all buffers when there is only one tab open
@@ -172,9 +199,10 @@ let g:deoplete#enable_at_startup = 1
 " Text wrapping
 set textwidth=79
 
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 0
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_enter = 0
+" let g:ale_lint_on_save = 0
+let g:ale_linters = {'python': ['pylint']}
 nnoremap <localleader>l :ALELint<cr>
 
 " Folding
@@ -188,5 +216,3 @@ nnoremap <leader>] <C-w><C-]><C-w>T
 " let g:gutentags_project_root = ['.customprojectroot', '.git', '.hg', '.svn', '.bzr', '_darcs', '_FOSSIL_', '.fslckout']
 " Mac only
 " let g:python3_host_prog = '/Users/gcooke/.virtualenvs/neovim/bin/python3'
-
-

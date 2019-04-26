@@ -101,6 +101,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim='nvim'
 # https://iterm2.com/documentation-shell-integration.html
+# Below line is Mac only
 source ~/.iterm2_shell_integration.zsh
 
 #git aliases
@@ -124,5 +125,16 @@ source /Users/gcooke/.zshrc_pindrop
 POWERLEVEL9K_PROMPT_ON_NEWLINE=false
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)
 zstyle ':vcs_info:*' disable-patterns "$HOME/mnt(|/*)"
+source ~/.powerlevel-color_scheme
 
+# Mac only
 source /Users/gcooke/Library/Python/2.7/bin/virtualenvwrapper.sh
+
+setbg() {
+    local bg="${1}"
+    if egrep -q -i "light|dark" <(echo ${bg}); then
+        vim -c ":call Setbg(\"${bg}\")" +qall
+    fi
+    echo "POWERLEVEL9K_COLOR_SCHEME=\"${bg}\"" > ~/.powerlevel-color_scheme 
+    source ~/.zshrc
+}

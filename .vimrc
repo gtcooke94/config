@@ -44,6 +44,9 @@ Plugin 'deoplete-plugins/deoplete-jedi'
 " Integrate tmuxline with vim airline
 Plugin 'edkolev/tmuxline.vim'
 
+" Black (python autoformatter)
+Plugin 'ambv/black'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -74,15 +77,18 @@ nnoremap <leader>a :q<CR>
 " https://jeffkreeftmeijer.com/vim-number/
 set number relativenumber
 augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+autocmd!
+autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
 " Tabstop settings
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+nnoremap J <C-f>
+nnoremap K <C-b>
 
 " Set backup, swaps
 set backup
@@ -202,7 +208,8 @@ set textwidth=79
 " let g:ale_lint_on_text_changed = 'never'
 " let g:ale_lint_on_enter = 0
 " let g:ale_lint_on_save = 0
-let g:ale_linters = {'python': ['pylint']}
+let g:ale_linters = {'python': ['pyflakes', 'pylint', 'flake8']}
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 nnoremap <localleader>l :ALELint<cr>
 
 " Folding
@@ -216,3 +223,6 @@ nnoremap <leader>] <C-w><C-]><C-w>T
 " let g:gutentags_project_root = ['.customprojectroot', '.git', '.hg', '.svn', '.bzr', '_darcs', '_FOSSIL_', '.fslckout']
 " Mac only
 " let g:python3_host_prog = '/Users/gcooke/.virtualenvs/neovim/bin/python3'
+" let g:python_host_prog = '/Users/gcooke/.virtualenvs/neovim2/bin/python2'
+" let g:python3_host_prog = 'python3'
+" let g:python_host_prog = 'python'

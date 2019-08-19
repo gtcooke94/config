@@ -9,6 +9,7 @@ mkdir ~/.vim/{bundle,autoload,swaps,backups}
 ln -s -f $CONFIG_DIR/.vimrc $HOME/.vim/.vimrc
 ln -s -f $HOME/.vim/.vimrc $HOME/.vimrc
 ln -s -f $HOME/.vimrc $HOME/.config/nvim
+ln -s -f $CONFIG_DIR/.tmux.conf $HOME/.tmux.conf
 
 
 # Likely want to do this in a virtual env instead

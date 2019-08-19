@@ -202,8 +202,10 @@ let g:lt_quickfix_list_toggle_map = '<leader>q'
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
-" Text wrapping
-set textwidth=79
+" Text wrapping BAD, this inserts newlines
+" set textwidth=79
+" This just visually wraps the text, we like this
+set wrap
 
 " let g:ale_lint_on_text_changed = 'never'
 " let g:ale_lint_on_enter = 0

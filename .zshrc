@@ -119,6 +119,7 @@ alias gh='git help'
 alias gl='git log --pretty=format:"%C(yellow)%h %ad %Creset%s %C(red)%d %Cgreen[%an] %Creset" --decorate --date=short -10 --graph'
 alias glm='git log --oneline --decorate --graph'
 alias gu='git unstage'
+alias fixup="git rebase -i HEAD~2"
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=false
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv context dir vcs)

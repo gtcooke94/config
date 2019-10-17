@@ -47,6 +47,9 @@ Plugin 'edkolev/tmuxline.vim'
 " Black (python autoformatter)
 Plugin 'ambv/black'
 
+" Go
+Plugin 'fatih/vim-go'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -229,3 +232,8 @@ nnoremap <leader>] <C-w><C-]><C-w>T
 "" DON'T USE
 " let g:python3_host_prog = 'python3'
 " let g:python_host_prog = 'python'
+
+" Go Settings
+nnoremap <leader>b :GoBuild<cr>
+nnoremap <leader>r :GoRun<cr>
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })

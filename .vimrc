@@ -204,6 +204,7 @@ let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#jedi#show_docstring = 1
 
 " Text wrapping BAD, this inserts newlines
 " set textwidth=79
@@ -227,13 +228,19 @@ nnoremap <leader>] <C-w><C-]><C-w>T
 
 " let g:gutentags_project_root = ['.customprojectroot', '.git', '.hg', '.svn', '.bzr', '_darcs', '_FOSSIL_', '.fslckout']
 " Mac only
-let g:python3_host_prog = '/Users/gcooke/.virtualenvs/neovim/bin/python3'
+let g:python3_host_prog = '/Users/gcooke/.virtualenvs/neovim3/bin/python3'
 let g:python_host_prog = '/Users/gcooke/.virtualenvs/neovim2/bin/python2'
+let g:black_virtualenv = '/Users/gcooke/.virtualenvs/neovim3'
 "" DON'T USE
 " let g:python3_host_prog = 'python3'
 " let g:python_host_prog = 'python'
+
 
 " Go Settings
 nnoremap <leader>b :GoBuild<cr>
 nnoremap <leader>r :GoRun<cr>
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+" call deoplete#custom#option('jedi', 'ignore_errors', 1)
+
+" Temp for jedi bugs
+" let g:deoplete#sources#jedi#ignore_errors = v:true

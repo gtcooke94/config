@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=${HOME}/homebrew/bin:${PATH}
+export PATH=${HOME}/homebrew/bin:${PATH}:${HOME}/go/bin
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
@@ -138,3 +138,5 @@ setbg() {
     echo "POWERLEVEL9K_COLOR_SCHEME=\"${bg}\"" > ~/.powerlevel-color_scheme 
     source ~/.zshrc
 }
+
+alias mygo="cd ~/go/src/github.com/gtcooke94"

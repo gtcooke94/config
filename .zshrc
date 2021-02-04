@@ -127,8 +127,8 @@ zstyle ':vcs_info:*' disable-patterns "$HOME/mnt(|/*)"
 source ~/.powerlevel-color_scheme
 
 # Mac only
-source /Users/gcooke/Library/Python/2.7/bin/virtualenvwrapper.sh
-source /Users/gcooke/.zshrc_pindrop
+# source /Users/gcooke/Library/Python/2.7/bin/virtualenvwrapper.sh
+# source /Users/gcooke/.zshrc_pindrop
 
 setbg() {
     local bg="${1}"

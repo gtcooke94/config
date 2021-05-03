@@ -1,0 +1,57 @@
+{
+    "vim.insertModeKeyBindings": [
+     {
+         "before": ["j", "k"],
+         "after": ["<esc>"]
+     }
+    ],
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "s"],
+            "after": [":", "w", "<CR>"]
+        },
+        {
+            "before": ["<C-h>"],
+            "after": ["<C-w>", "h"]
+        },
+        {
+            "before": ["<C-j>"],
+            "after": ["<C-w>", "j"]
+        },
+        {
+            "before": ["<C-k>"],
+            "after": ["<C-w>", "k"]
+        },
+        {
+            "before": ["<C-l>"],
+            "after": ["<C-w>", "l"]
+        },
+        {
+           "before": ["<leader>", "l"],
+           "commands": ["workbench.action.problems.focus"],
+        },
+        {
+           "before": ["<leader>", "t"],
+           "commands": ["workbench.action.terminal.focus"],
+        },
+        {
+           "before": ["<leader>", "r"],
+           "commands": ["workbench.action.debug.run"],
+        },
+        {
+            "before": ["<leader>", "c"],
+            "commands": ["editor.action.commentLine"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "c"],
+            "commands": ["editor.action.commentLine"]
+        }
+    ],
+    "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": null,
+    "terminal.integrated.fontFamily": "'Cascadia Code PL'"
+}

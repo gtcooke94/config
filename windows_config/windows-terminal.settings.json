@@ -114,12 +114,6 @@
                 "hidden": false,
                 "name": "Ubuntu-18.04",
                 "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "commandline": "cmd.exe /k set inetroot=d:/pfgold&set corextbranch=pfgold_small&d:/pfgold/tools/path1st/myenv.cmd",
-                "guid": "{a8e00496-00c0-4679-a895-b9f0713ba615}",
-                "name": "PFGold",
-                "startingDirectory": "D:\\pfgold\\data\\Compute\\AzCP-Kronox\\Config"
             }
         ]
     },
